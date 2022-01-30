@@ -18,16 +18,17 @@ class Solution {
         if(root == null){
             return -1;
         }
-        TreeMap<Integer,Integer> map = new TreeMap<>();
+
         LinkedList<TreeNode> q = new LinkedList<>();
         TreeNode temp = root;
         q.add(temp);
         int level = 0;
+        int res = -1;
         while(!q.isEmpty()){
             int n = q.size();
             for(int i = 0;i<n;i++){
                 TreeNode pop = q.remove();
-                map.put(level,pop.val);
+                res = pop.val;
                 if(pop.right!= null){
                     q.add(pop.right);
                 }
@@ -38,7 +39,7 @@ class Solution {
             level++;
         }
         
-        return map.get(map.lastKey());
+        return res;
         
     }
 }
