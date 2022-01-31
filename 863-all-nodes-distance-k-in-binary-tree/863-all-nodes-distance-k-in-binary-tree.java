@@ -22,7 +22,6 @@ class Solution {
         for(int i = 0;i<=max;i++){
             arr.add(new ArrayList<>());
         }
-        System.out.println("max = "  + max );
         temp = root;
         dfs(temp,arr);
         temp = root;
@@ -61,7 +60,6 @@ class Solution {
     private void num(TreeNode root){
         if(root == null)  return;
         max = Math.max(root.val,max);
-        System.out.println("max = "  + max + " rval"  + root.val );
         num(root.left);
         num(root.right);
     }
