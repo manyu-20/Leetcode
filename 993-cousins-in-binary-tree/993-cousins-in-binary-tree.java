@@ -59,7 +59,6 @@ class Solution {
             }
             level++;
         }
-        System.out.println(parentX + " " + parentY  + " " + levelX + " " + levelY);
         if(parentX != -1 && parentY != -1 && levelX != -1 && levelY != -1){
             return levelX == levelY && parentX != parentY;
         }
