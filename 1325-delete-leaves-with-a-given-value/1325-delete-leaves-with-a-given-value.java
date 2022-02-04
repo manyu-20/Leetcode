@@ -25,8 +25,7 @@ class Solution {
         return root;
         
     }
-    // target   =  0
-    //root is null = -1
+
     int fun(TreeNode root,int target){
         if(root == null){
             return -1;
