@@ -29,7 +29,6 @@ class Solution {
         }
         arr.add(root.val);
         if(root.left == null && root.right == null){
-            System.out.println(arr);
             sum = sum + toNum(arr);
             return;
         }  
@@ -45,7 +44,6 @@ class Solution {
             res += start * x;
             start *= 2;
         }
-        System.out.println(res);
         return res;
     }
 }
