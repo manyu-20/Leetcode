@@ -1,5 +1,4 @@
 class Solution {
-    Boolean[][] dp;
     public boolean canPartition(int[] nums) {
         int sum = 0;
         for(int x : nums){
@@ -9,30 +8,56 @@ class Solution {
             return false;
         }
         int find = sum/2;
-        dp = new Boolean[nums.length + 1][find + 1];
-        for(int i = 0;i<dp.length;i++){
+        
+        int n = nums.length;
+        Boolean[][] dp = new Boolean[n+1][find+1];
+        for(int i = 0;i<=n;i++){
             Arrays.fill(dp[i],null);
         }
-        return fun(0,find,nums);
+        
+        for(int i = 0;i<=n;i++){
+            for(int j = 0;j<=find;j++){
+                if(i == 0){
+                    dp[i][j] = false;
+                }
+                if(j == 0){
+                    dp[i][j] = true;
+                }
+            }
+        }
+        
+        for(int i = 1;i<=n;i++){
+            for(int j = 1;j<=find;j++){
+                if(nums[i-1] <= j){
+                    dp[i][j] = dp[i-1][j - nums[i-1]] || dp[i-1][j];
+                }
+                else{
+                    dp[i][j] = dp[i-1][j];
+                }
+            }
+        }
+        
+        return dp[n][find];
+        
+        
     }
     
-    boolean fun(int index,int find,int[] nums){
+    boolean fun(int[] nums,int n,int find){
         if(find == 0){
             return true;
         }
-        if(index >= nums.length || find < 0){
+        if(n == 0){
             return false;
         }
         
-        if(dp[index][find] != null){
-            return dp[index][find];
+        if(nums[n-1] <= find ){
+            return fun(nums,n-1,find - nums[n-1]) || fun(nums,n-1,find);
         }
         
-        if(nums[index] <= find){
-            return dp[index][find] = fun(index + 1,find - nums[index],nums) || fun(index+1,find,nums);
-        }
         else{
-            return dp[index][find] = fun(index + 1,find,nums);
+            return fun(nums,n-1,find);
         }
     }
+    
+
 }
