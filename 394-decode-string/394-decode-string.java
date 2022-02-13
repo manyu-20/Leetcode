@@ -15,7 +15,6 @@ class Solution {
                 i++;
                 no.reverse();
                 int num = Integer.parseInt(no.toString());
-                System.out.println("num " + num);
                 st.pop();
                 StringBuilder temp = new StringBuilder("");
                 while(!st.isEmpty() && !st.peek().equals("]")) {
