@@ -3,10 +3,7 @@ class Solution {
     public int minCostClimbingStairs(int[] cost) {
         dp = new int[cost.length+1];
         Arrays.fill(dp,-1);
-        int first = fun(0,cost);
-        Arrays.fill(dp,-1);
-        int sec = fun(1,cost);
-        return Math.min(first,sec);
+        return Math.min(fun(0,cost),fun(1,cost));
     }
     
     int fun(int i,int[] cost){
