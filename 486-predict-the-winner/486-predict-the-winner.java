@@ -11,7 +11,6 @@ class Solution {
             sum  = sum + x;
         }
         int res = fun(0,nums.length-1,nums);
-        System.out.println(res);
         if(res >= sum - res){
             return true;
         }
