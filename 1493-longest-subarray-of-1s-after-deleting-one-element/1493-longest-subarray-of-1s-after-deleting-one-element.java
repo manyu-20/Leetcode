@@ -25,9 +25,7 @@ class Solution {
             }
 
             if(count <= k){
-                System.out.println("i " + i + " j " + j);
                 ans = Math.max(ans,j-i);
-                System.out.println((j-i));
                 j++;
             }
             else if(count > k){
