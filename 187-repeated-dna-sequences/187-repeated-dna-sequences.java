@@ -13,7 +13,6 @@ class Solution {
             }
             else if(j-i+1 == k){
                 String str = new String(s.substring(i,j+1));
-                System.out.println(str);
                 hm.put(str,hm.getOrDefault(str,0)+1);
                 j++;
             }
