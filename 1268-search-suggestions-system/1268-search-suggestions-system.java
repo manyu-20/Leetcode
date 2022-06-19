@@ -17,7 +17,6 @@ class Solution {
             }
         }
         
-        System.out.println(hm);
         
         
         
