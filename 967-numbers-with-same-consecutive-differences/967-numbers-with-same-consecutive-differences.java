@@ -11,7 +11,7 @@ class Solution {
         for(int x : list){
             arr[i++] = x;
         }
-        Arrays.sort(arr);
+        // Arrays.sort(arr);
         return arr;
     }
     // 25  258  252
