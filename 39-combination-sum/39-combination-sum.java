@@ -7,7 +7,7 @@ class Solution {
         
         for(ArrayList<Integer> temp : hs ){
             ArrayList<Integer> temp2 = new ArrayList<>(temp);
-            Collections.sort(temp2);
+            // Collections.sort(temp2);
             arr.add(new ArrayList<>(temp2));
         }
         return arr;
