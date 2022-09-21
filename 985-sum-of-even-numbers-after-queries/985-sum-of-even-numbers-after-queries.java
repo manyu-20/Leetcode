@@ -13,17 +13,12 @@ class Solution {
             int prev = nums[index];
             int next = nums[index] + val;
             if(prev % 2 == 0 && next % 2 == 0){
-                // hm.put(index,next);
-                // nums[index] = next;
                 sum = sum + val;
             }
             else if(prev % 2 == 0){
-                // hm.remove(index);
                 sum = sum - prev;
             }
             else if(next % 2 == 0){
-                // hm.put(index,next);
-                // nums[index] = next;
                 sum = sum + next;
             }
             nums[index] = next;
