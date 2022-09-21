@@ -1,11 +1,9 @@
 class Solution {
     public int[] sumEvenAfterQueries(int[] nums, int[][] queries) {
-        HashMap<Integer,Integer> hm = new HashMap<>();
         int sum = 0;
         for(int i = 0;i<nums.length;i++){
             if(nums[i] % 2 == 0){
                 sum = sum + nums[i];
-                hm.put(i,nums[i]);
             }
         }
         int[] res = new int[queries.length];
