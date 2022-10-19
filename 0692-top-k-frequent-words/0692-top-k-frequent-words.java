@@ -13,7 +13,6 @@ class Solution {
         for(String x : words){
             hm.put(x,hm.getOrDefault(x,0)+1);
         }
-        System.out.println(hm);
         for(String x : hm.keySet()){
             pq.add(new pack(hm.get(x),x));
             while(pq.size() > k){
